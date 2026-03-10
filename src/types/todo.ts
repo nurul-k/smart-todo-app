@@ -3,6 +3,7 @@ export interface Todo {
   title: string;
   completed: boolean;
   userId: string;
+  goalId?: string;   // ✅ add this line
   createdAt?: Date;
   updatedAt?: Date;
 }
