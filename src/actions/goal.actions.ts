@@ -377,6 +377,15 @@ export async function getGoalYearProgress(goalId: string) {
 
   const goal = await Goal.findById(goalId);
 
+  if (!goal) {
+    return {
+      success: false,
+      percent: 0,
+      productiveDays: 0,
+      totalDays: 0,
+    };
+  }
+
   const start = new Date(goal.startDate);
   const end = new Date(goal.endDate);
 
