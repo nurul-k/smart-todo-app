@@ -22,6 +22,9 @@ async function dbConnect() {
     return cached.conn;
   }
 
+  // debug: show URI being used
+  console.log('connecting to', MONGODB_URI);
+
   if (!cached.promise) {
     const opts = {
       bufferCommands: false,
